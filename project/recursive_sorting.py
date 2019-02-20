@@ -44,7 +44,22 @@ def merge_sort_in_place(arr, l, r):
 
 # TO-DO: implement the Quick Sort function below USING RECURSION
 def quick_sort( arr, low, high ):
+    if high-low <= 0:
+        return arr
 
+    pivot = low
+    for i in range (low + 1, high + 1):
+        if arr[i] < arr[pivot]:
+            temp = arr[i]
+            arr[i] = arr[pivot + 1]
+            arr[pivot + 1] = temp
+
+            temp = arr[pivot]
+            arr[pivot] = arr[pivot + 1]
+            arr[pivot + 1] = temp
+            pivot += 1
+    arr = quick_sort(arr, low, pivot - 1)
+    arr = quick_sort(arr, pivot + 1, high)
     return arr
 
 
