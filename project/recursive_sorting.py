@@ -68,6 +68,9 @@ def quick_sort( arr, low, high ):
             print(arr)
             # print("This is I after move LHS of pivot 2 swaps", [i])
 
+            #path to the base case?
+            #Call quick_sort
+
     return arr
 
 
